@@ -9,7 +9,7 @@ const buildOrderListItem = (order) => {
 export const Orders = () => {
     /*
         Can you explain why the state variable has to be inside
-        the component function for Orders, but not the others?
+        the component function for Orders, but not the others? no.
     */
     const orders = getOrders()
 
