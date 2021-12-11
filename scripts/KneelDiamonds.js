@@ -1,12 +1,19 @@
-
 import { DiamondSizes } from "./DiamondSizes.js"
 import { JewelryStyles } from "./JewelryStyles.js"
 import { Orders } from "./Orders.js"
 import { Metals } from "./Metals.js"
+import { addCustomOrder } from "./database.js"
+
 
 document.addEventListener(
     "click",
-    (event) => {
+    (clickEvent) => {
+        const itemClicked = clickEvent.target
+        if(itemClicked.id.startsWith("orderButton")) {
+            return addCustomOrder()
+        }
+        // document.getElementById("orderButton")
+        // console.log("Get Order")
     }
 )
 
@@ -31,6 +38,7 @@ export const KneelDiamonds = () => {
 
         <article>
             <button id="orderButton">Create Custom Order</button>
+
         </article>
 
         <article class="customOrders">
@@ -40,3 +48,4 @@ export const KneelDiamonds = () => {
     `
 }
 
+ //  ${addCustomOrder()}
